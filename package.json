@@ -1,6 +1,7 @@
 {
-  "name": "my-app",
+  "name": "teams-app",
   "version": "0.1.0",
+  "homepage": "https://awesome-teams.herokuapp.com/",
   "private": true,
   "dependencies": {
     "react": "^16.6.3",
