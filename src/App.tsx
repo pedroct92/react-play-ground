@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-d
 import './App.css';
 import { TeamListComponent } from './components/team-list/team-list.component';
 import { TeamInfoComponent } from './components/team-info/team-info.component';
+import { ErrorComponent } from './components/error/error.component';
 
 class App extends React.Component {
 
@@ -15,6 +16,7 @@ class App extends React.Component {
                     )} />
                     <Route exact={true} path="/teams" component={TeamListComponent} />
                     <Route exact={true} path="/teams/:id" component={TeamInfoComponent} />
+                    <Route component={ErrorComponent} />
                 </Switch>
             </Router>
         );

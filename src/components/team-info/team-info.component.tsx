@@ -27,7 +27,7 @@ interface TeamDetailsProps {
 export class TeamInfoComponent extends React.Component<TeamDetailsProps, TeamDetailsSate> {
 
     private apiService: ApiService;
-    private unMount: Subject<Boolean>;
+    private unMount: Subject<boolean>;
 
     constructor(props: any) {
         super(props);
@@ -65,7 +65,7 @@ export class TeamInfoComponent extends React.Component<TeamDetailsProps, TeamDet
     private loadTeam(): void {
         this.apiService.getTeamById(this.props.match.params.id)
             .pipe(takeUntil(this.unMount),
-                tap(team => this.setState({ team: team })),
+                tap(team => this.setState({ team })),
                 switchMap(team => {
                     return forkJoin(this.apiService.getMembersOfTeam(team.members), this.apiService.getMemberById(team.lead));
                 })

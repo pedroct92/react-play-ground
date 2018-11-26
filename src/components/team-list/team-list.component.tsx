@@ -16,7 +16,7 @@ interface TeamListSate {
 export class TeamListComponent extends React.Component<{}, TeamListSate> {
 
     private apiService: ApiService;
-    private unMount: Subject<Boolean>;
+    private unMount: Subject<boolean>;
 
     constructor(props: any) {
         super(props);
@@ -37,17 +37,6 @@ export class TeamListComponent extends React.Component<{}, TeamListSate> {
                 {this.renderTeams()}
             </div>
         );
-    }
-
-    renderTeams() {
-        if (this.state.loading) {
-            return <LoadingComponent />;
-        }
-
-        if (this.state.error) {
-            return <ErrorComponent />;
-        }
-        return <TeamTableComponent teams={this.state.teams} />;
     }
 
     public componentWillUnmount() {
@@ -72,6 +61,17 @@ export class TeamListComponent extends React.Component<{}, TeamListSate> {
                     error: true
                 })
             });
+    }
+
+    private renderTeams() {
+        if (this.state.loading) {
+            return <LoadingComponent />;
+        }
+
+        if (this.state.error) {
+            return <ErrorComponent />;
+        }
+        return <TeamTableComponent teams={this.state.teams} />;
     }
 }
 
