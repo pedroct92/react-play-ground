@@ -6,7 +6,7 @@ import { Member } from 'src/models/member.model';
 // TODO: This service should be provided to the components by using DI!
 export class ApiService {
 
-    private static baseUrl: string = 'http://tempo-test.herokuapp.com/7d1d085e-dbee-4483-aa29-ca033ccae1e4/1/';
+    private static baseUrl: string = 'https://tempo-test.herokuapp.com/7d1d085e-dbee-4483-aa29-ca033ccae1e4/1/';
 
     public getTeams(): Observable<Array<Team>> {
         return from(fetch(ApiService.baseUrl + 'team/'))
