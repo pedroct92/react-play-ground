@@ -5,7 +5,7 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
-  <App hoho={'hello'} />,
+  <App />,
   document.getElementById('root') as HTMLElement
 );
 registerServiceWorker();
