@@ -1,4 +1,4 @@
-# H1 General Considerations
+# General Considerations
 
 - I have used create react app in order to simplify the process of the application.
 - As I have litte expericen with the react ecosystem I did not use redux and related technologies due to time constrants.
